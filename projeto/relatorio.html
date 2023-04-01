@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório SuperComp</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2539/2539785.png">
+</head>
+<body>
+    <header>
+        <h1>Super Computação - Relatório 2023.1</h1>
+        <p>Autor: Bruno Freitas do Nascimento Rodrigues</p>
+        <hr>
+    </header>
+   
+    <main>
+        <div class="aviso">
+            <p>Todos os códigos expostos nesse relatório podem ser acessados em: git</p>
+        </div>
+       
+        <div class="implementacao">
+            <h2>Implementação:</h2>
+            <p>As heurísticas, gananciosa e aleatória, foram implementadas seguindo a seguinte lógica:</p>
+            <ul>
+                <li>Tratamento das entradas</li>
+                <li>Aplicação das heurísticas</li>
+                <li>Tratamento da saída dos resultados</li>
+            </ul>
+            <div class="entradas">
+                <h3>Tratamento das entradas:</h3>
+                <p> A formatação esperada para o arquivo de input é na primeira linha quantidade de filmes
+                    quantidade de categorias, a segunda linha ser número de a quantidade de filmes em
+                    cada categoria e as demais linhas os filmes com hora que começa, hora que acaba e categoria.
+                </p>
+                <p> Assim as entradas foram tratadas seguindo a lógica do código abaixo, para ambas as heurísticas:</p>
+                <img src="./imgs/entradas.png"/>
+                <p>A lógica consiste em ler o arquivo em loop e gravar as entradas no vetor lista, se o valor de início
+                     for menor ou igual que o do fim ela não sofre alteração, no caso contrário o valor de fim dela e modificado para 24,
+                     o ajuste é realizado dessa forma, pois filmes que ultrapassem o limite de um dia a parte dele que passou limite não é
+                     considerada para aquele dia de maratona. Caso houvesse mais um dia de maratona esse período seria considerado .
+                </p>
+            </div>
+            <div class="heuristicas">
+                <h3>Aplicação das heurísticas:</h3>
+                <p>Para a aplicação da heurística gananciosa o sua invariante é a ordenação do vetor de filmes com base no horário de término,
+                    como pode ser visto na imagem abaixo:
+                </p>
+                <img src="./imgs/invariante_g.png"/>
+                <p>Para a aleatória a sua invariante é ter 25% de chance de adicionar um filme qualquer a mais, como está presente no trecho de
+                    código abaixo:
+                </p>
+                <img src="./imgs/invariante_a.png">
+            </div>
+            <div class="saidas">
+                <h3>Tratamento da saída dos resultados:</h3>
+                <p>A formatação da saída segue a seguinte o lógica, ambos programas imprime no console uma representação da alocação dos filmes no dia
+                    e também quais filmes foram escolhidos. Além disso eles salvam os valores de quantidade de filmes, quantidade de categorias,
+                    tempo não alocado, tempo de execução e quantidade de filmes alocados em um arquivo csv, o código responsável por isso pode ser visto abaixo:
+                </p>
+                <img src="./imgs/saida.png"/>
+                <p>A saída do terminal a primeira linha pode ser interpretada da seguinte forma, os valores entre [] representam as horas do dia, todos os números diferentes de
+                    zero são ids dos filmes e eles representam que a hora do vetor foi preenchida pelo filme com esse id, o zero significa que aquela hora não
+                    foi preenchida com nenhum filme. A segunda linha no terminal são os filmes que forma escolhidos.
+                </p>
+                <img src="./imgs/console.png"/>
+            </div>
+            <hr>
+        </div>
+
+
+        <div class="valgrind">
+            <h2>Profiling:</h2>
+            <p>O profiling da heurísticas gananciosa teve os seguintes pontos de interesse:</p>
+            <img src="./imgs/pg1.png"/>
+            <p>O primeiro foi essa chamada de função que totaliza mais 32 milhões de instruções, o ponto que chama a atenção é o volume de instruções, contudo não a muito que possa ser
+                feito para melhorar isso, uma vez  que essa chamada de função está associada a leitura dos inputs e estruturação deles em um vetor, o que fundamental para a resolução do
+                problema.
+            </p>
+            <p>Outro ponto de interesse é a sequência de condições para um filme ser adicionado, principalmente a condição que envolve o valor absoluto da diferença do começo e do fim do filme,
+                O maior número de instruções nesse trecho deve estar associado a o cálculo do valor absoluto.  
+            </p>
+            <img src="./imgs/pg2.png"/>
+            <p>Por último, um ponto interessante para reparar e essa chamada do método count, que envolve a leitura do completa do vetor, e tendo em vista que ele está dentro de um for pode trazer
+                alguns problemas de desempenho.
+            </p>
+            <img src="./imgs/pg3.png"/>
+            <p>Para a heurística aleatória os mesmos pontos assimas se apresentam, com adição do trecho abaixo que apresenta uma situação semelhante a segunda imagem apresentada que possui um valor
+                mais elevado de instruções devido ao cálculo do valor absoluto.
+            </p>
+            <img src="./imgs/pa1.png"/>
+            <hr>
+        </div>
+
+
+        <div class="resultados">
+            <h2>Resultados:</h2>
+            <div class="analise">
+                <h3>Filmes totais x Filmes vistos:</h3>
+                <div class="mural">
+                    <img src="./graficos/aleatoria/ffa.png"/>
+                    <img src="./graficos/gananciosa/ffg.png"/>
+                    <img src="./graficos/comparacao/ff.png"/>
+                </div>
+                <p>Observando os gráficos acima é nítido que para a heurística aleatória quantidade de filmes não impacta quantidade filmes vista,
+                    enquanto para a gananciosa impacta, contudo apenas até 1000 filmes acima desse valor têm pouca variação.
+                </p>
+            </div>
+            <div class="analise">
+                <h3>Categorias x Filmes assistidos:</h3>
+                <div class="mural">
+                    <img src="./graficos/aleatoria/cfa.png"/>
+                    <img src="./graficos/gananciosa/cfg.png"/>
+                    <img src="./graficos/comparacao/cf.png"/>
+                </div>
+                <p>Agora analisando a quantidade assistida em relação a quantidade de categorias é claro que ambas as heurísticas sem beneficiam
+                    de uma maior quantidade de categorias, entretanto a gananciosa tem um benefício maior conseguindo chegar a 24 filmes.
+                </p>
+            </div>
+            <div class="analise">
+                <h3>Filmes x Tempo de Execução:</h3>
+                <div class="mural">
+                    <img src="./graficos/aleatoria/ftea.png"/>
+                    <img src="./graficos/gananciosa/fteg.png"/>
+                    <img src="./graficos/comparacao/fte.png"/>
+                </div>
+                <p>Do ponto de vista do tempo de execução do programas é claro que quanto mais filmes mais tempo demora para executar, isso ocorre
+                    para ambas as heurísticas, mas a aleatória sofre com crescimento maior de tempo de execução do que a gananciosa.
+                </p>
+            </div>
+            <div class="analise">
+                <h3>Categorias x Tempo de Execução:</h3>
+                <div class="mural">
+                    <img src="./graficos/aleatoria/ctea.png"/>
+                    <img src="./graficos/gananciosa/cteg.png"/>
+                    <img src="./graficos/comparacao/cte.png"/>
+                </div>
+                <p>Agora analisando o tempo de execução em relação a quantidade de categorias, os resultados mostram que a quantidade de categorias
+                    é pouca impactante para ambas as heurísticas, afetando um pouco a gananciosa quando poucas categorias, mas a partir de 8 categorias
+                    não ocorrem mudanças significativas, vale ressaltar que a aleatória apresenta uma variação maior de resultados, porém não é apresentado
+                    um padrão que indique que a quantidade de categorias esteja afetando de forma positiva ou negativa os resultados.
+                </p>
+            </div>
+        </div>
+    </main>
+   
+</body>
+</html>
+
+
+
