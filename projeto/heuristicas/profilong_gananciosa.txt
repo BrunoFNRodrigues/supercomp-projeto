@@ -1,0 +1,198 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.1669' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 8179261
+Trigger: Program termination
+Profiled target:  ./maratona_gananciosa (PID 1669, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   maratona_gananciosa.cpp
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir         
+--------------------------------------------------------------------------------
+37,557,135  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir         file:function
+--------------------------------------------------------------------------------
+7,405,689  ???:std::istreambuf_iterator<char, std::char_traits<char> > std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::_M_extract_int<long>(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, long&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+4,952,790  /build/glibc-SzIz7B/glibc-2.31/libio/getc.c:getc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+3,865,474  /build/glibc-SzIz7B/glibc-2.31/libio/genops.c:_IO_sputbackc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+3,255,136  /build/glibc-SzIz7B/glibc-2.31/libio/ioungetc.c:ungetc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+2,520,840  ???:std::istream::sentry::sentry(std::istream&, bool) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+1,831,014  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+1,650,550  ???:std::istream::operator>>(int&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+1,170,390  ???:0x0000000000126e50 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+1,061,785  /build/glibc-SzIz7B/glibc-2.31/elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  960,384  /build/glibc-SzIz7B/glibc-2.31/libio/iofflush.c:fflush [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+  661,276  ???:0x0000000000125250 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+  575,467  /build/glibc-SzIz7B/glibc-2.31/elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  573,704  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::uflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+  570,228  /build/glibc-SzIz7B/glibc-2.31/libio/libioP.h:fflush
+  550,323  ???:0x00000000048e3130 [???]
+  540,216  /build/glibc-SzIz7B/glibc-2.31/libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+  540,180  ???:0x0000000000126f00 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+  505,134  maratona_gananciosa.cpp:main [/home/bruno/supercomp/projeto/heuristicas/maratona_gananciosa]
+  485,537  /usr/include/c++/9/bits/move.h:void std::__introsort_loop<__gnu_cxx::__normal_iterator<main::filme*, std::vector<main::filme, std::allocator<main::filme> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(auto:1&, auto:2&)
+  450,180  ???:std::ostream::flush() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+  406,897  ???:0x00000000048e0880 [???]
+  353,309  /usr/include/c++/9/bits/stl_algo.h:void std::__introsort_loop<__gnu_cxx::__normal_iterator<main::filme*, std::vector<main::filme, std::allocator<main::filme> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(auto:1&, auto:2&)
+  347,595  /usr/include/c++/9/bits/stl_algo.h:main
+  275,175  /build/glibc-SzIz7B/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+  255,175  /build/glibc-SzIz7B/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__memcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+  205,162  /usr/include/c++/9/bits/stl_iterator.h:void std::__introsort_loop<__gnu_cxx::__normal_iterator<main::filme*, std::vector<main::filme, std::allocator<main::filme> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(auto:1&, auto:2&) [/home/bruno/supercomp/projeto/heuristicas/maratona_gananciosa]
+  181,392  ???:std::locale::id::_M_id() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+  124,202  /usr/include/c++/9/bits/predefined_ops.h:void std::__introsort_loop<__gnu_cxx::__normal_iterator<main::filme*, std::vector<main::filme, std::allocator<main::filme> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(auto:1&, auto:2&)
+  120,671  /build/glibc-SzIz7B/glibc-2.31/elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   90,617  /build/glibc-SzIz7B/glibc-2.31/elf/do-rel.h:_dl_relocate_object
+   90,036  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::sync() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   86,289  /build/glibc-SzIz7B/glibc-2.31/string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   71,545  /build/glibc-SzIz7B/glibc-2.31/elf/dl-addr.c:_dl_addr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   60,341  ???:0x00000000048e04f0 [???]
+   60,029  ???:0x00000000048e1530 [???]
+   60,029  ???:0x00000000048e3080 [???]
+   60,025  ???:0x00000000048e0f30 [???]
+   60,025  ???:0x00000000048e26a0 [???]
+   60,024  /build/glibc-SzIz7B/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:fflush
+   60,020  ???:0x000000000010a220 [???]
+   60,020  ???:std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, long&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+
+--------------------------------------------------------------------------------
+-- User-annotated source: maratona_gananciosa.cpp
+--------------------------------------------------------------------------------
+Ir      
+
+-- line 3 ----------------------------------------
+      .  #include <algorithm>
+      .  #include <random>
+      .  #include <chrono>
+      .  #include <fstream>
+      .  #include <time.h>
+      .  
+      .  using namespace std;
+      .  
+     12  int main(int argc, char *argv[]){
+      .      //declaracao a struct para os filmes
+      .      struct filme{
+      .          int id;
+      .          int inicio;
+      .          int fim;
+      .          int categoria;
+      .      };
+      .  
+-- line 19 ----------------------------------------
+-- line 20 ----------------------------------------
+      .      // vetor de categorias
+      .      vector<int> categorias;
+      .      // vetor com todos os filmes
+      .      vector<filme> lista;
+      .      // vetor com os filmes selecionados
+      .      vector<filme> maratona;
+      .  
+      .      // quantidade de filmes e categorias 
+      1      int n = 0;
+      1      int c = 0;
+      .      // varicavel para a leitura dos limetes por categorias
+      .      int catn;
+      .  
+      .      // le a primeira linha do arquivo e atribui os valores de quantidade de filmes e categorias
+      6      cin >> n >> c;
+  8,589  => ???:0x000000000010a220 (2x)
+      .  
+      .      // loop que le o limite de cada categoria e salva do vetor categorias
+     33      for (int i = 0; i < c; i++){
+     24          cin >> catn;
+  7,984  => ???:0x000000000010a220 (8x)
+      .          categorias.push_back(catn); 
+      .      }
+      .  
+      .      // horario de inicio, fim e a categoria do filme
+      .      int inicio, fim, categoria;
+      .  
+      .      // le uma linha correspondente a um filme até chegar no valor que foi passado na primeira linha do arquivo
+ 20,005      for (int i = 0; i < n; i++){
+ 90,001          cin >> inicio >> fim >> categoria;
+32,646,241  => ???:0x000000000010a220 (30,000x)
+      .          // realiza o ajuste horario caso um filme acaba em horario menor que o de inicio para ele acabar as 24
+150,184          if (fim < inicio){
+  4,908              lista.push_back({i+1, inicio, 24, categoria});
+      .          } else {
+  8,773              lista.push_back({i+1, inicio, fim, categoria});
+      .          }
+      .      }
+      .  
+      .      // ordena a lista com base no horario de fim dos filmes sendo do menor para o maior
+      .      sort(lista.begin(), lista.end(), [](auto& i, auto& j){return i.fim < j.fim;});
+      .  
+      .      // vetor que serve para alocar os filmes em um espaço de 24 horas
+      .      vector<int> dia(24, 0);
+      1      int tempo = 24;
+      .      // inicia a contagem do tempo de execução
+      2      clock_t t = clock();
+     47  => ???:0x000000000010a230 (1x)
+      .      // adiciona um filme a maratona...
+ 30,002      for(auto& el: lista){
+      .          // se ainda puderem ser adicionados mais filmes da categoria
+ 60,000          if(categorias[el.categoria-1] != 0){
+      .              // a não estourar o limite de tempo
+ 75,744              if(tempo - abs(el.fim - el.inicio) >= 0){
+      .                  // se o horario que acaba for maior que o do que comeca
+ 30,594                  if(el.fim > el.inicio){
+      .                      // se não tem nenhum filme ja esta ocupando periodo de tempo
+ 34,179                      if(count(dia.begin()+el.inicio, dia.end()-(24-el.fim), 0) == (el.fim - el.inicio)){
+     96                          for (int i = el.inicio; i < el.fim; i++)
+      .                          {
+     48                              dia[i] = el.id;
+      .                          }
+      .  
+      .                          maratona.push_back(el);
+      .                          // diminui o tempo disponivel
+     48                          tempo -= (el.fim - el.inicio); 
+      .                          // diminui a quantidade de filmes que ainda podem ser colocadas naquela categoria
+    120                          categorias[el.categoria-1]--;
+      .                      }                    
+      .                  } 
+      .              }
+      .          }
+      .      } 
+      .      // termina de contar o tempo de execucao
+      3      t = clock() - t;   
+     47  => ???:0x000000000010a230 (1x)
+      .   
+      .      // realiza o output grafico de como ficaram alocados os filmes
+      3      cout << "[ ";
+  4,160  => ???:0x000000000010a280 (1x)
+     73          for(auto& el:dia){
+     98      cout << el  <<" ";
+ 15,923  => ???:0x000000000010a330 (24x)
+      .      }
+      .      cout << "]" << endl;
+      .      
+      .      // realiza o output dos filmes que foram selecionados
+     76      for(auto& el:maratona){
+     97          cout << el.id << " ";
+ 10,979  => ???:0x000000000010a330 (24x)
+      .      }
+      .      cout << endl;
+      .      // salvo os valoresde quantidade de filmes, quantidade de categorias, tempo nao alocado, tempo de execucao e quantidade de filmes alocados 
+      .      // em um arquivo csv
+      2      string arquivo = argv[1];
+      .      ofstream file;
+      .      file.open ("./../resultados/"+arquivo+".csv", ios_base::app);
+      .      file << to_string(n)+","+to_string(c)+","+to_string(tempo)+","+to_string(((float)t)/CLOCKS_PER_SEC)+","+to_string(maratona.size()) << endl;
+      .      file.close();
+      .  
+      3  }
+--------------------------------------------------------------------------------
+Ir      
+--------------------------------------------------------------------------------
+505,137  events annotated
+
