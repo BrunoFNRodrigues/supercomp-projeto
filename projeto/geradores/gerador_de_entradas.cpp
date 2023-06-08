@@ -6,12 +6,12 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    for (int i = 1000; i < atoi(argv[1])+1; i+=1000)
+    for (int i = 1; i < atoi(argv[1])+1; i+=1)
     {
-        for (int j = 1; j < 13; j++)
+        for (int j = 1; j < atoi(argv[2]); j++)
         {
             int n = i;
-            int m = 20;
+            int m = j;
 
             ofstream inputFile;
             inputFile.open("./../inputs/input_"+to_string(n)+"_"+to_string(j)+".txt");
@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
             default_random_engine generator (seed);
 
             // Definindo distribuição normal com média de 3 e desvio padrão de 1
-            normal_distribution<double> distribution_dif(j, 1.0);
+            normal_distribution<double> distribution_dif(3.0, 1.0);
 
             uniform_int_distribution<int> distribution_hr(0, 23);
             uniform_int_distribution<int> distribution_cat(1, m);

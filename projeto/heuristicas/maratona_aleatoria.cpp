@@ -108,7 +108,7 @@ int main(int argc, char *argv[]){
                                     // diminui a quantidade de filmes que ainda podem ser colocadas naquela categoria
                                     categorias[lista[p].categoria-1]--;
                                     // remove o filme adicionado para evitar duplicidade
-                                    lista.erase(lista.begin()+p-1);
+                                    lista.erase(lista.begin()+p);
                                 }                    
                             }
                         }
